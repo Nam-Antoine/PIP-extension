@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "PiP+ — Picture-in-Picture with Subtitles & Volume",
+  "short_name": "PiP+",
+  "version": "1.1.0",
+  "description": "Picture-in-Picture that keeps subtitles (CC) visible and adds volume, seek, speed and caption-size controls.",
+  "minimum_chrome_version": "116",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "PiP+ — toggle Picture-in-Picture (Alt+P)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.youtube-nocookie.com/*"],
+      "js": ["yt-bridge.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

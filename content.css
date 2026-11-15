@@ -1,0 +1,69 @@
+/* PiP+ styles injected into the host page (not the PiP window). */
+
+.pipx-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  background: #0b0b0c;
+  color: #d6d6d6;
+  font: 500 15px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pipx-placeholder--fill {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+.pipx-ph-btn,
+.pipx-toast button {
+  appearance: none;
+  border: 0;
+  border-radius: 18px;
+  padding: 8px 16px;
+  background: #e5383b;
+  color: #fff;
+  font: 600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.pipx-ph-btn:hover,
+.pipx-toast button:hover {
+  background: #f04a4d;
+}
+
+.pipx-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(20, 20, 22, 0.96);
+  color: #fff;
+  font: 500 13px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Button added to the YouTube player bar. */
+.pipx-yt-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.pipx-yt-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  pointer-events: none;
+}
